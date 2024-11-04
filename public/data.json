@@ -1,0 +1,135 @@
+[
+    {
+      "product_id": 1,
+      "product_title": "Wireless Bluetooth Headphones",
+      "product_image": "https://i.ibb.co.com/FWJMsqM/wireless-earbuds-with-neon-cyberpunk-style-lighting-1.jpg",
+      "category": "Electronics",
+      "price": 49.99,
+      "description": "High-quality wireless headphones with noise-cancellation technology.",
+      "specification": ["Bluetooth 5.0", "20-hour battery life", "Noise-cancellation", "Foldable design"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 2,
+      "product_title": "4K LED Smart TV",
+      "product_image": "https://i.ibb.co.com/JR0Q56Z/landscape-nature-scene-tv-appliance-generative-ai.jpg",
+      "category": "Electronics",
+      "price": 299.99,
+      "description": "Experience ultra-high-definition entertainment with this 4K smart TV.",
+      "specification": ["4K UHD", "55-inch screen", "Smart TV", "HDR10 support"],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": 3,
+      "product_title": "Wireless Gaming Mouse",
+      "product_image": "https://i.ibb.co.com/J5SZwwx/red-computer-mouse.jpg",
+      "category": "Electronics",
+      "price": 29.99,
+      "description": "Ergonomic wireless gaming mouse with adjustable DPI settings.",
+      "specification": ["Adjustable DPI", "Ergonomic design", "RGB lighting", "2.4 GHz wireless"],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": 4,
+      "product_title": "Smartwatch",
+      "product_image": "https://i.ibb.co.com/qyyN8Vz/man-using-smartwatch.jpg",
+      "category": "Electronics",
+      "price": 99.99,
+      "description": "Smartwatch with health tracking and customizable watch faces.",
+      "specification": ["Heart rate monitor", "GPS", "Customizable watch faces", "5 ATM water resistance"],
+      "availability": false,
+      "rating": 4.2
+    },
+    {
+      "product_id": 5,
+      "product_title": "Laptop Backpack",
+      "product_image": "https://i.ibb.co.com/F4nyDCR/travel-suitcase-preparations-packing.jpg",
+      "category": "Accessories",
+      "price": 39.99,
+      "description": "Durable and spacious backpack with a dedicated laptop compartment.",
+      "specification": ["Water-resistant", "Fits up to 15-inch laptops", "Multiple compartments", "Comfortable padding"],
+      "availability": true,
+      "rating": 4.4
+    },
+    {
+      "product_id": 6,
+      "product_title": "Stainless Steel Water Bottle",
+      "product_image": "https://i.ibb.co.com/2FfKFgY/top-view-floating-water.jpg",
+      "category": "Accessories",
+      "price": 14.99,
+      "description": "Insulated water bottle to keep drinks cold or hot for hours.",
+      "specification": ["500 ml", "Double-wall insulation", "BPA-free", "Leak-proof"],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": 7,
+      "product_title": "Portable Charger",
+      "product_image": "https://i.ibb.co.com/xGnqpVy/phone-mobile-connect-battery-power-bank.jpg",
+      "category": "Electronics",
+      "price": 24.99,
+      "description": "High-capacity portable charger with fast-charging capabilities.",
+      "specification": ["10,000 mAh", "USB-C and USB-A ports", "Fast charging", "Compact design"],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": 8,
+      "product_title": "LED Desk Lamp",
+      "product_image": "https://i.ibb.co.com/b6fvbC6/book-lightbulb-eyewear-pot-simple.jpg",
+      "category": "Home Office",
+      "price": 19.99,
+      "description": "Adjustable LED desk lamp with three brightness settings.",
+      "specification": ["Adjustable arm", "3 brightness levels", "Touch control", "Energy-efficient LED"],
+      "availability": true,
+      "rating": 4.2
+    },
+    {
+      "product_id": 9,
+      "product_title": "Ergonomic Office Chair",
+      "product_image": "https://i.ibb.co.com/wzxqTmK/gaming-chair.jpg",
+      "category": "Home Office",
+      "price": 129.99,
+      "description": "Comfortable office chair with lumbar support and adjustable height.",
+      "specification": ["Adjustable height", "Lumbar support", "Breathable mesh back", "360-degree swivel"],
+      "availability": false,
+      "rating": 4.3
+    },
+    {
+      "product_id": 10,
+      "product_title": "Wireless Keyboard and Mouse Combo",
+      "product_image": "https://i.ibb.co.com/9ym27TK/top-view-smartphone-with-keyboard-charger.jpg",
+      "category": "Electronics",
+      "price": 34.99,
+      "description": "Slim and quiet wireless keyboard and mouse set.",
+      "specification": ["Wireless 2.4 GHz", "Quiet keys", "Compact design", "Long battery life"],
+      "availability": true,
+      "rating": 4.0
+    },
+    {
+      "product_id": 11,
+      "product_title": "Smart Light Bulb",
+      "product_image": "https://i.ibb.co.com/JKSPhqG/man-using-smartphone-his-automated-home.jpg",
+      "category": "Home Office",
+      "price": 12.99,
+      "description": "Voice-controlled smart bulb with adjustable brightness and colors.",
+      "specification": ["Voice control", "Adjustable brightness", "16 million colors", "Wi-Fi enabled"],
+      "availability": true,
+      "rating": 4.1
+    },
+    {
+      "product_id": 12,
+      "product_title": "Noise-Canceling Earbuds",
+      "product_image": "https://i.ibb.co.com/P1Dk7fk/sleeping-person-getting-nap.jpg",
+      "category": "Electronics",
+      "price": 59.99,
+      "description": "Compact earbuds with noise-canceling features and long battery life.",
+      "specification": ["Bluetooth 5.2", "Noise-cancellation", "Charging case", "24-hour playtime"],
+      "availability": true,
+      "rating": 4.6
+    }
+  ]
+  
