@@ -7,7 +7,7 @@ import GadgetsContainer from "../Gadgets/GadgetsContainer";
 
 const Home = () => {
     return (
-       <div>
+       <div className="m-4">
             <div className="max-w-7xl mx-auto bg-purple-600 p-16 text-white text-center space-y-4 rounded-md pb-44">
                 <div className="m-4 space-y-4">
                   <h1 className="text-4xl font-bold">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
@@ -17,7 +17,6 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <GadgetsContainer></GadgetsContainer>
-            
        </div>
     );
 };

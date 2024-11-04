@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Gadget from "./Gadget";
-
- 
 
 const Gadgets = () => {
     const [gadgets, setGadgets] = useState([]);
     useEffect(() => {
-        fetch('./data.json')
+        fetch('/data.json')
         .then(response => response.json())
         .then(data => setGadgets(data))
-    } ,[])
+    } ,[]);
+
     return (
-        <div>
-            <h2>Gadgets data</h2>
-            <p>{gadgets.length}</p>
-            <Gadget></Gadget>
+        <div className="p-4">
+            <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                {
+                    gadgets.map(gadget => <Gadget key={gadget.product_id} gadgets={gadget}></Gadget>)
+                }
+            </div> 
         </div>
     );
 };

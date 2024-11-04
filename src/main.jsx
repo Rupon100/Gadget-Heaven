@@ -10,6 +10,11 @@ import {
 import ErrorPage from './ErrorPage/ErrorPage';
 import Root from './Root/Root'
 import Home from './Home/Home';
+import Category from './Category/Category';
+import Dashboard from './Dashboard/Dashboard';
+import Statistics from './Statistics/Statistics';
+import Gadget from './Gadgets/Gadget';
+import Gadgets from './Gadgets/Gadgets';
  
 
 
@@ -21,7 +26,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('../category.json'),
+        children: [
+          {
+            path: '/category/:category',
+            element: <Category></Category>,
+          }, 
+        ]
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard></Dashboard>
+      },
+      {
+        path: '/statistics',
+        element: <Statistics></Statistics>
       }
     ]
   },

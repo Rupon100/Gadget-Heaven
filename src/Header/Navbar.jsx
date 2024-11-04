@@ -8,16 +8,16 @@ const Navbar = () => {
             <NavLink to='/'>Home</NavLink>
         </li>
         <li>
-            <NavLink>Statistics</NavLink>
+            <NavLink to="/statistics">Statistics</NavLink>
         </li>
         <li>
-            <NavLink>Dashboard</NavLink>
+            <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
     </div>
        
     
     return (
-        <div className="max-w-7xl mx-auto navbar bg-base-100">
+        <div className="max-w-7xl mx-auto navbar bg-base-100 m-4">
             <div className="navbar-start">
               <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

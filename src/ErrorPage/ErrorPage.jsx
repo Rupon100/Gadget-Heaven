@@ -3,7 +3,7 @@
 const ErrorPage = () => {
     return (
         <div>
-            <h1 className="text-4xl text-center">Error Found!</h1>
+            <h1 className="text-4xl text-center">No Data Found!</h1>
         </div>
     );
 };
