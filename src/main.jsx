@@ -16,6 +16,8 @@ import Statistics from './Statistics/Statistics';
 import Gadget from './Gadgets/Gadget';
 import Gadgets from './Gadgets/Gadgets';
 import GadgetDetail from './Gadgets/GadgetDetail';
+import AddToCart from './AddToCart/AddToCart';
+import Wishlist from './AddToCart/Wishlist';
  
 
 
@@ -43,7 +45,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: '/dashboard/cart',
+            element: <AddToCart></AddToCart>
+          },
+          {
+            path: '/dashboard/wishlist',
+            element: <Wishlist></Wishlist>
+          }
+        ]
       },
       {
         path: '/statistics',
