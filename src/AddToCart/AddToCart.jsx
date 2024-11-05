@@ -33,7 +33,6 @@ const AddToCart = () => {
     }
 
     
-
      
     return (
         <div className="flex flex-col max-w-4xl mx-auto p-4">

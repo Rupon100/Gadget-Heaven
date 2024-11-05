@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { addToStoredDashboardList } from "../Utility/AddToDashBoard";
+import { addToStoredDashboardList, addToWishListdDashboardList } from "../Utility/AddToDashBoard";
 import { useState } from "react";
 
 const GadgetDetail = () => {
@@ -10,7 +10,7 @@ const GadgetDetail = () => {
     const product_idInt = parseInt(product_id);
 
     const singleDetail = gadgets.find(gadget => gadget.product_id === product_idInt);
-    console.log(singleDetail)
+    // console.log(singleDetail)
     const {availability, description, price, product_image, product_title, rating, specification } = singleDetail;
 
     const ratingRound = Math.floor(rating);
@@ -19,8 +19,8 @@ const GadgetDetail = () => {
     const addToWhiteList = (id) => {
         if(!isClicked){
             setIsClicked(true);
-        }
-        console.log(id)
+            addToWishListdDashboardList(id);
+        }  
     }
 
 

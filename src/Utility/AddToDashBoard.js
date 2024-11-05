@@ -29,6 +29,30 @@ const addToStoredDashboardList = (id) => {
 //     localStorage.removeItem('')
 // }
 
+const getStoredForWishList = () => {
+    const storedListStr = localStorage.getItem('wish-list');
+    if(storedListStr){
+        const storedList = JSON.parse(storedListStr)
+        return storedList;
+    }else{
+        return [];
+    }
+}
+
+const addToWishListdDashboardList = (id) => {
+    const storedList = getStoredForWishList();
+    if(storedList.includes(id)){
+        console.log(id, 'you already added this to your wishList');
+    }else {
+        storedList.push(id);
+        const storedListString = JSON.stringify(storedList);
+        localStorage.setItem('wish-list', storedListString);
+    }
+}
 
 
-export { addToStoredDashboardList, getStoredAddList }
+
+
+
+
+export { addToStoredDashboardList, getStoredAddList, getStoredForWishList, addToWishListdDashboardList }

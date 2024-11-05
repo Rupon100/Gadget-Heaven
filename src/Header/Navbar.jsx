@@ -39,11 +39,6 @@ const Navbar = () => {
     }, [])
 
 
-    /// console.log(addlist, price)
-    
-   
-    //const totalPrice = filterAddData.reduce((sum,item) => sum + item.price, 0);
-    // ttlPrice(totalPrice)
        
     
     return (

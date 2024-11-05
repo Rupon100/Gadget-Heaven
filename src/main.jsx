@@ -45,7 +45,6 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        
         element: <Dashboard></Dashboard>,
         children: [
           {
@@ -55,6 +54,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/dashboard/wishlist',
+            loader: () => fetch('/data.json'),
             element: <Wishlist></Wishlist>
           }
         ]

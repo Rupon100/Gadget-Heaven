@@ -1,9 +1,28 @@
- 
+import { useEffect, useState } from "react";
+import { getStoredForWishList } from "../Utility/AddToDashBoard";
+import { useLoaderData } from "react-router-dom";
+
+import SingleWishList from "./SingleWishList";
 
 const Wishlist = () => {
+    const [allData, setAllData] = useState([])
+    const saveWishList = getStoredForWishList();
+
+    const allGadgets = useLoaderData();
+     
+    
+    useEffect(() => {
+        const filterAddData = allGadgets.filter(data => saveWishList.includes(data.product_id.toString()))
+        setAllData(filterAddData)
+    }, [])
+
+
     return (
-        <div>
-            <h1>WishList here...</h1>
+        <div className="max-w-4xl mx-auto p-4 space-y-5">
+            <h3 className="text-lg font-semibold">Wish List</h3>
+            {
+                allData.map((data, index) => <SingleWishList key={index} item={data}></SingleWishList>)
+            }
         </div>
     );
 };
