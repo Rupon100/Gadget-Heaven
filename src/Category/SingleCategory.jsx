@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 
-const SingleCategory = ({category}) => {
+const SingleCategory = ({category, gadgets, handleCategory}) => {
     
     return (
         <NavLink to={`/category/${category.category}`} className={({ isActive }) =>
@@ -9,7 +9,7 @@ const SingleCategory = ({category}) => {
                 isActive ? 'bg-purple-600 text-white' : 'hover:bg-purple-600 hover:text-white'
             }`
         }>
-            <button className="m-3">{category.category}</button>
+            <button onClick={() => handleCategory(category.category)} className="m-3">{category.category}</button>
         </NavLink>
     );
 };

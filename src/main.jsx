@@ -15,6 +15,7 @@ import Dashboard from './Dashboard/Dashboard';
 import Statistics from './Statistics/Statistics';
 import Gadget from './Gadgets/Gadget';
 import Gadgets from './Gadgets/Gadgets';
+import GadgetDetail from './Gadgets/GadgetDetail';
  
 
 
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
             element: <Category></Category>,
           }, 
         ]
+      },
+      {
+        path: '/gadgets/:product_id',
+        loader: () => fetch('/data.json'),
+        element: <GadgetDetail></GadgetDetail>
       },
       {
         path: '/dashboard',

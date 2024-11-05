@@ -1,7 +1,7 @@
 [
     {
       "product_id": 1,
-      "product_title": "Wireless Bluetooth Headphones",
+      "product_title": "Bluetooth Headphones",
       "product_image": "https://i.ibb.co.com/FWJMsqM/wireless-earbuds-with-neon-cyberpunk-style-lighting-1.jpg",
       "category": "Electronics",
       "price": 90.99,
@@ -56,7 +56,7 @@
     },
     {
       "product_id": 6,
-      "product_title": "Stainless Steel Water Bottle",
+      "product_title": "Stainless Water Bottle",
       "product_image": "https://i.ibb.co.com/2FfKFgY/top-view-floating-water.jpg",
       "category": "Accessories",
       "price": 140.99,
@@ -100,7 +100,7 @@
     },
     {
       "product_id": 10,
-      "product_title": "Wireless Keyboard and Mouse Combo",
+      "product_title": "Keyboard and Mouse",
       "product_image": "https://i.ibb.co.com/9ym27TK/top-view-smartphone-with-keyboard-charger.jpg",
       "category": "Electronics",
       "price": 334.99,

@@ -3,7 +3,7 @@ import SingleCategory from "./SingleCategory";
 
  
 
-const Category = () => {
+const Category = ({ gadgets, handleCategory, handleAllGadgets }) => {
     const categories = useLoaderData();
     
     return (
@@ -16,11 +16,11 @@ const Category = () => {
                 }`
               }
             >
-              <button className="m-3">All Gadgets</button>
+              <button onClick={handleAllGadgets} className="m-3">All Gadgets</button>
             </NavLink>
 
             {
-                categories.map(category => <SingleCategory key={category.id} category={category}></SingleCategory>)
+                categories.map(category => <SingleCategory key={category.id} category={category} gadgets={gadgets} handleCategory={handleCategory}></SingleCategory>)
             }
         </div>
     );

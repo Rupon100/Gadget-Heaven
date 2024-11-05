@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Gadgets from "../Gadgets/Gadgets";
@@ -12,7 +13,9 @@ const Home = () => {
                 <div className="m-4 space-y-4">
                   <h1 className="text-4xl font-bold">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                   <p className="text-gray-100">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-                  <button className="cursor-pointer p-2 bg-white text-purple-600 font-semibold rounded-full">Shop Now</button>
+                  <button className="cursor-pointer p-2 bg-white text-purple-600 font-semibold rounded-full">
+                    <NavLink to='/dashboard'>Shop Now</NavLink>
+                  </button>
                 </div>
             </div>
             <Banner></Banner>
