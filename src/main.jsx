@@ -45,10 +45,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
+        
         element: <Dashboard></Dashboard>,
         children: [
           {
             path: '/dashboard/cart',
+            loader: () => fetch('/data.json'),
             element: <AddToCart></AddToCart>
           },
           {

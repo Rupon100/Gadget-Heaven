@@ -1,26 +1,63 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
+import { CiFilter } from "react-icons/ci";
+import { getStoredAddList } from "../Utility/AddToDashBoard";
+import { useEffect, useState } from "react";
+import AddToCartList from "./AddToCartList";
 
  
 
 const AddToCart = () => {
+    const [price, ttlPrice] = useState(0);
+    const [addlist, setAddList] = useState([]);
+    const allData = useLoaderData();
+    const getId = getStoredAddList();
+    //console.log(allData)
+    
+     
+    useEffect(() => {
+        const filterAddData = allData.filter(data => getId.includes(data.product_id.toString()))
+        setAddList(filterAddData)
+         
+        const totalPrice = filterAddData.reduce((sum,item) => sum + item.price, 0);
+        ttlPrice(totalPrice)
+
+    }, [])
+
+    //console.log(addlist)
+
+    const shortByPrice = () => {
+        console.log('worked')
+        const descendingOrder =  [...addlist].sort((a,b) => b.price - a.price);
+        setAddList(descendingOrder);
+        
+    }
+
+    
+
      
     return (
-        <div>
-            <div>
-                <h2>Cart</h2>
-                <div>
-                    <h2>Total Cost: 100</h2>
-                    <button className="flex">
-                        <span>Short by Price</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5" />
-                        </svg>
-                    </button>
-                    <button>Purchase</button>
+        <div className="flex flex-col max-w-4xl mx-auto p-4">
+            <div className="flex justify-between">
+                <h2 className="text-xl font-semibold">Cart</h2>
+                <div className="flex justify-center items-center gap-4">
+                    <h2 className="text-xl font-semibold">Total Cost: {price}</h2>
+                     
+                    <button onClick={shortByPrice} className="flex justify-center p-1 items-center rounded-full bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500">
+                        <div className="flex gap-2 justify-center items-center rounded-full bg-white p-1.5">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">Sort by Price</span>
+                            <CiFilter />
+                        </div>
+                   </button>
+
+                    <button className="px-4 py-2 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 rounded-full text-white">Purchase</button>
                 </div>
             </div>
-            <div>
-                <div></div>
+            <div className="py-6">
+                <div className="space-y-4 py-4">
+                    {
+                        addlist.map((item, index) => <AddToCartList key={index} item={item}></AddToCartList>)
+                    }
+                </div>
             </div>
         </div>
     );

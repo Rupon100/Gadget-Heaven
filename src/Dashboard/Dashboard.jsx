@@ -1,8 +1,11 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
 
 const Dashboard = () => {
+
+    //const allGadgets = useLoaderData();
+    // console.log(allGadgets);
+
     return (
         <div>
             <div className="bg-purple-600 p-10 text-white text-center space-y-6">
