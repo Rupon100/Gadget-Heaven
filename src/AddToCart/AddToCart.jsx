@@ -4,16 +4,13 @@ import { getStoredAddList } from "../Utility/AddToDashBoard";
 import { useEffect, useState } from "react";
 import AddToCartList from "./AddToCartList";
 
- 
-
 const AddToCart = () => {
     const [price, ttlPrice] = useState(0);
     const [addlist, setAddList] = useState([]);
     const allData = useLoaderData();
     const getId = getStoredAddList();
-    //console.log(allData)
     
-     
+
     useEffect(() => {
         const filterAddData = allData.filter(data => getId.includes(data.product_id.toString()))
         setAddList(filterAddData)
@@ -23,14 +20,25 @@ const AddToCart = () => {
 
     }, [])
 
-    //console.log(addlist)
 
     const shortByPrice = () => {
         console.log('worked')
         const descendingOrder =  [...addlist].sort((a,b) => b.price - a.price);
-        setAddList(descendingOrder);
-        
+        setAddList(descendingOrder); 
     }
+
+
+    const removeUi = (id) => {
+        setAddList((preList) => {
+            const updateList = preList.filter(item => item.product_id !== id);
+
+            const totalPrice = updateList.reduce((sum,item) => sum + item.price, 0);
+            ttlPrice(totalPrice);
+
+            return updateList;
+        });
+    }
+    
 
     
      
@@ -54,7 +62,11 @@ const AddToCart = () => {
             <div className="py-6">
                 <div className="space-y-4 py-4">
                     {
-                        addlist.map((item, index) => <AddToCartList key={index} item={item}></AddToCartList>)
+                        addlist.map((item, index) => <AddToCartList 
+                        key={index} 
+                        item={item}
+                        removeUi={removeUi}
+                        ></AddToCartList>)
                     }
                 </div>
             </div>

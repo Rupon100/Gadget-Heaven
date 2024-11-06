@@ -1,11 +1,11 @@
 import { MdDeleteForever } from "react-icons/md";
+import { getStoredAddList, removeStoredList } from "../Utility/AddToDashBoard";
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
-const AddToCartList = ({ item }) => {
-    // console.log(item)
-    const {product_title, product_image, price,description } = item;
+const AddToCartList = ({ item, removeUi }) => {
+    const { product_id,product_title, product_image, price,description } = item;
+
+    console.log(getStoredAddList());
 
     return (
         <div className="flex justify-between items-start border p-2 rounded-md">
@@ -17,8 +17,11 @@ const AddToCartList = ({ item }) => {
                     <p className="font-semibold">Price: {price}$</p>
                 </div>
             </div>
-            <div className="">
-                <button className="text-2xl text-red-500">
+            <div>
+                <button onClick={() => {
+                    removeStoredList(product_id);
+                    removeUi(product_id);
+                }} className="text-2xl text-red-500">
                     <MdDeleteForever />
                 </button>
             </div>

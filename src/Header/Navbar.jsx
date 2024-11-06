@@ -1,14 +1,15 @@
 import { NavLink } from "react-router-dom";
-import { getStoredAddList } from "../Utility/AddToDashBoard";
+import { getStoredAddList, getStoredForWishList } from "../Utility/AddToDashBoard";
 import { useEffect, useState } from "react";
 
  
 
 const Navbar = () => {
-     const [price, ttlPrice] = useState(0);
+     const [price, setPrice] = useState(0);
      const [gadgets, setGadgets] = useState([]);
      const [addlist, setAddList] = useState([]);
      const savedItem = getStoredAddList();
+     const saveForWish = getStoredForWishList();
 
     const links = <div className="flex flex-row gap-2">
         <li>
@@ -20,26 +21,47 @@ const Navbar = () => {
         <li>
             <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
+        <li>
+            <NavLink to="/about-us">About Us</NavLink>
+        </li>
     </div>
 
+
+    const updateAddList = () => {
+      const savedItem = getStoredAddList();
+      const filterAddData = gadgets.filter(data => savedItem.includes(data.product_id.toString()));
+      setAddList(filterAddData);
+    
+      const totalPrice = filterAddData.reduce((sum, item) => sum + item.price, 0);
+      setPrice(totalPrice);
+    };
+
+
+    useEffect(() => {
+    fetch('/data.json')
+    .then(res => res.json())
+    .then(data => setGadgets(data));
+
+    }, [])
+
+    useEffect(() => {
+      updateAddList();
+   }, [gadgets, savedItem]);
 
     
 
     useEffect(() => {
-      fetch('/data.json')
-      .then(res => res.json())
-      .then(data => setGadgets(data));
-
+      const savedItem = getStoredAddList();
       const filterAddData = gadgets.filter(data => savedItem.includes(data.product_id.toString()))
       setAddList(filterAddData)
 
       const totalPrice = filterAddData.reduce((sum,item) => sum + item.price, 0);
-      ttlPrice(totalPrice)
+      setPrice(totalPrice)
+    }, [gadgets])
 
-    }, [])
 
-
-       
+   
+      
     
     return (
         <div className="max-w-7xl mx-auto navbar bg-base-100 m-4">
@@ -118,7 +140,7 @@ const Navbar = () => {
                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
                    </svg>
-                   <span className="badge badge-sm indicator-item">0</span>
+                   <span className="badge badge-sm indicator-item">{saveForWish.length}</span>
                  </div>
               </div>
             </div>

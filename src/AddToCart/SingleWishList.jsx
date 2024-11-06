@@ -1,7 +1,13 @@
 import { MdDeleteForever } from "react-icons/md"; 
+import { removeWishList } from "../Utility/AddToDashBoard";
 
-const SingleWishList = ({ item }) => {
-    const {product_title, product_image, price,description } = item;
+const SingleWishList = ({ item, removeItem }) => {
+    const { product_id,product_title, product_image, price,description } = item;
+
+
+
+
+
     return (
         <div className="flex justify-between items-start border p-2 rounded-md">
             <div className="flex gap-4">
@@ -12,7 +18,7 @@ const SingleWishList = ({ item }) => {
                     <p className="font-semibold">Price: {price}$</p>
                 </div>
             </div>
-            <div className="">
+            <div onClick={() => removeItem(product_id)}>
                 <button className="text-2xl text-red-500">
                     <MdDeleteForever />
                 </button>
@@ -22,3 +28,4 @@ const SingleWishList = ({ item }) => {
 };
 
 export default SingleWishList;
+

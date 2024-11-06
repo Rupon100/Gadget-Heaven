@@ -1,8 +1,4 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-
-const getStoredAddList = () => {
+ const getStoredAddList = () => {
     const storedListStr = localStorage.getItem('read-list');
     if(storedListStr){
         const storedList = JSON.parse(storedListStr)
@@ -24,10 +20,25 @@ const addToStoredDashboardList = (id) => {
 }
 
 
+const removeStoredList = (id) => {
+    const storedList = getStoredAddList();
+    const upDateStoredList = storedList.filter(item => item.toString() !== id.toString());
 
-// const removeStoredList = (id) => {
-//     localStorage.removeItem('')
-// }
+    const updateStoredListString = JSON.stringify(upDateStoredList);
+    localStorage.setItem('read-list', updateStoredListString);
+    
+    console.log(id, 'is removed from LS');
+    console.log(storedList)
+}
+
+
+
+
+
+
+
+ 
+
 
 const getStoredForWishList = () => {
     const storedListStr = localStorage.getItem('wish-list');
@@ -52,7 +63,20 @@ const addToWishListdDashboardList = (id) => {
 
 
 
+const removeWishList = (id) => {
+    const storedList = getStoredForWishList();
+    const upDateStoredList = storedList.filter(item => item.toString() !== id.toString());
+
+    const updateStoredListString = JSON.stringify(upDateStoredList);
+    localStorage.setItem('wish-list', updateStoredListString);
+    
+    console.log(id, 'is removed from wishList LS');
+    console.log(storedList)
+}
 
 
 
-export { addToStoredDashboardList, getStoredAddList, getStoredForWishList, addToWishListdDashboardList }
+
+
+
+export { addToStoredDashboardList, getStoredAddList, getStoredForWishList, addToWishListdDashboardList, removeStoredList, removeWishList }
