@@ -1,8 +1,13 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
 import { Helmet } from 'react-helmet-async'; 
+import { useEffect } from 'react';
 
 const Dashboard = () => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate('/dashboard/cart')
+    },[navigate])
  
 
     return (
@@ -39,8 +44,6 @@ const Dashboard = () => {
             <div>
                 <Outlet></Outlet>
             </div>
-
-             
 
         </div>
     );

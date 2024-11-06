@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async';
 
 import {
   createBrowserRouter,
+  redirect,
   RouterProvider,
 } from "react-router-dom";
 import ErrorPage from './ErrorPage/ErrorPage';
