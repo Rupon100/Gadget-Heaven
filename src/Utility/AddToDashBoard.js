@@ -53,6 +53,7 @@ const getStoredForWishList = () => {
 const addToWishListdDashboardList = (id) => {
     const storedList = getStoredForWishList();
     if(storedList.includes(id)){
+        
         console.log(id, 'you already added this to your wishList');
     }else {
         storedList.push(id);

@@ -1,7 +1,7 @@
 # Gadget Heaven
 ## Live View: https://gadget-heaven-rupon100.netlify.app
 
-## Document Link: file:///C:/Users/HP/Desktop/assignment8/B10-A8-gadget-heaven/Batch-10_Assignment-08.pdf
+## Document Link: https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf
 
 
 ## List of React Fundamental  concept i use there
