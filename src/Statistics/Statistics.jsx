@@ -5,44 +5,62 @@ const Statistics = () => {
 
     const data = [
         {
-          name: 'Page A',
+          name: 'Headphones',
           uv: 4000,
           pv: 2400,
           amt: 2400,
         },
         {
-          name: 'Page B',
+          name: 'Smart TV',
           uv: 3000,
           pv: 1398,
           amt: 2210,
         },
         {
-          name: 'Page C',
+          name: 'Gaming Mouse',
           uv: 2000,
           pv: 9800,
           amt: 2290,
         },
         {
-          name: 'Page D',
+          name: 'Smartwatch',
           uv: 2780,
           pv: 3908,
           amt: 2000,
         },
         {
-          name: 'Page E',
+          name: 'Laptop Backpack',
           uv: 1890,
           pv: 4800,
           amt: 2181,
         },
         {
-          name: 'Page F',
+          name: 'Water Bottle',
           uv: 2390,
           pv: 3800,
           amt: 2500,
         },
         {
-          name: 'Page G',
+          name: 'Portable Charger',
           uv: 3490,
+          pv: 4300,
+          amt: 2100,
+        },
+        {
+          name: 'Desk Lamp',
+          uv: 490,
+          pv: 4000,
+          amt: 1300,
+        },
+        {
+          name: 'Office Chair',
+          uv: 690,
+          pv: 4300,
+          amt: 2100,
+        },
+        {
+          name: 'Light Bulb',
+          uv: 1490,
           pv: 4300,
           amt: 2100,
         },
@@ -58,7 +76,7 @@ const Statistics = () => {
                <h2 className="text-2xl font-semibold">Statistics</h2>
               
                <div style={{ width: '100%' }} className='p-6'>
-                        <ResponsiveContainer width="100%" height={200}>
+                        <ResponsiveContainer width="100%" height={400}>
                           <AreaChart
                             width={500}
                             height={300}
@@ -81,6 +99,7 @@ const Statistics = () => {
                        
                     </div>
                </div>
+               <p className='text-center font-semibold text-lg p-2 border bg-purple-600 text-white'>uv - sell</p>
         </div>
     );
 };

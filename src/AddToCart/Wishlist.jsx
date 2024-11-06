@@ -20,7 +20,11 @@ const Wishlist = () => {
     const handleremoveFromWish = (id) => {
         removeWishList(id);
         
-        setWishList((preItems) => {
+        // setWishList((preItems) => {
+        //     preItems.filter((item) => item.product_id !== id);
+        // })
+        
+        setAllData((preItems) => {
             preItems.filter((item) => item.product_id !== id);
         })
     }
