@@ -1,11 +1,9 @@
 import { MdDeleteForever } from "react-icons/md";
-import { getStoredAddList, removeStoredList } from "../Utility/AddToDashBoard";
-
+import {  removeStoredList } from "../Utility/AddToDashBoard";
 
 const AddToCartList = ({ item, removeUi }) => {
     const { product_id,product_title, product_image, price,description } = item;
-
-    console.log(getStoredAddList());
+    // console.log(getStoredAddList());
 
     return (
         <div className="flex justify-between items-start border p-2 rounded-md">
@@ -23,6 +21,8 @@ const AddToCartList = ({ item, removeUi }) => {
                     removeUi(product_id);
                 }} className="text-2xl text-red-500">
                     <MdDeleteForever />
+
+                   
                 </button>
             </div>
         </div>

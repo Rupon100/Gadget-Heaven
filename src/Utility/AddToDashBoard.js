@@ -1,4 +1,7 @@
- const getStoredAddList = () => {
+import { toast } from 'react-toastify';
+
+
+const getStoredAddList = () => {
     const storedListStr = localStorage.getItem('read-list');
     if(storedListStr){
         const storedList = JSON.parse(storedListStr)
@@ -12,7 +15,13 @@ const addToStoredDashboardList = (id) => {
     const storedList = getStoredAddList();
     if(storedList.includes(id)){
         console.log(id, 'id already exist');
+
+        toast.error('You have already added this!');
+
     }else {
+
+        toast.success('Succesfully added!');
+
         storedList.push(id);
         const storedListString = JSON.stringify(storedList);
         localStorage.setItem('read-list', storedListString);
@@ -28,16 +37,9 @@ const removeStoredList = (id) => {
     localStorage.setItem('read-list', updateStoredListString);
     
     console.log(id, 'is removed from LS');
+
     console.log(storedList)
 }
-
-
-
-
-
-
-
- 
 
 
 const getStoredForWishList = () => {
@@ -59,9 +61,10 @@ const addToWishListdDashboardList = (id) => {
         storedList.push(id);
         const storedListString = JSON.stringify(storedList);
         localStorage.setItem('wish-list', storedListString);
+
+        toast.success('Succesfully added to Wish List!');
     }
 }
-
 
 
 const removeWishList = (id) => {
@@ -71,8 +74,9 @@ const removeWishList = (id) => {
     const updateStoredListString = JSON.stringify(upDateStoredList);
     localStorage.setItem('wish-list', updateStoredListString);
     
-    console.log(id, 'is removed from wishList LS');
-    console.log(storedList)
+    // console.log(id, 'is removed from wishList LS');
+    toast.warn('removed from Wish List!');
+    // console.log(storedList)
 }
 
 
