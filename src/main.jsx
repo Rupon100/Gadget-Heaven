@@ -18,6 +18,7 @@ import Gadgets from './Gadgets/Gadgets';
 import GadgetDetail from './Gadgets/GadgetDetail';
 import AddToCart from './AddToCart/AddToCart';
 import Wishlist from './AddToCart/Wishlist';
+import AboutUs from './AboutUs/AboutUs';
  
 
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
             element: <Wishlist></Wishlist>
           }
         ]
+      },
+      {
+        path: '/about-us',
+        element: <AboutUs></AboutUs>
       },
       {
         path: '/statistics',
