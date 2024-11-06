@@ -84,7 +84,7 @@ const AddToCart = () => {
                         <h3 className="font-bold text-xl py-4">Payment Successfully</h3>
                         <div className="divider"></div>
                         <p className="py-2 text-xl text-gray-600">Thanks for purchasing.</p>
-                        <p className="py-2 text-xl text-gray-600">Total: {price}</p>
+                        <p className="py-2 text-xl text-gray-600">Total: {price.toFixed(2)}</p>
                         <div className="modal-action">
                           <form method="dialog">
                             <Link to='/' onClick={deleteAll} className="btn">Close</Link>
