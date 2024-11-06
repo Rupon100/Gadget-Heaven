@@ -3,7 +3,7 @@ import {  removeStoredList } from "../Utility/AddToDashBoard";
 
 const AddToCartList = ({ item, removeUi }) => {
     const { product_id,product_title, product_image, price,description } = item;
-    // console.log(getStoredAddList());
+     
 
     return (
         <div className="flex justify-between items-start border p-2 rounded-md">

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getStoredForWishList, removeWishList } from "../Utility/AddToDashBoard";
 import { useLoaderData } from "react-router-dom";
-
 import SingleWishList from "./SingleWishList";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
     const [allData, setAllData] = useState([])
@@ -20,10 +20,6 @@ const Wishlist = () => {
     const handleremoveFromWish = (id) => {
         removeWishList(id);
         
-        // setWishList((preItems) => {
-        //     preItems.filter((item) => item.product_id !== id);
-        // })
-        
         setAllData((preItems) => {
             preItems.filter((item) => item.product_id !== id);
         })
@@ -32,6 +28,9 @@ const Wishlist = () => {
 
     return (
         <div className="max-w-4xl mx-auto p-4 space-y-5">
+            <Helmet>
+                <title>wish list | Gedget Heaven</title>
+            </Helmet>
             <h3 className="text-lg font-semibold">Wish List</h3>
             {
                 allData.map((data, index) => <SingleWishList 

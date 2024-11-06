@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Helmet } from 'react-helmet-async';
 
 const Statistics = () => {
 
@@ -68,6 +68,10 @@ const Statistics = () => {
 
     return (
         <div>
+          <Helmet>
+            <title>Statistics | Gadget Heaven</title>
+          </Helmet>
+
             <div className="bg-purple-600 text-white p-10 text-center space-y-4">
                 <h2 className="text-4xl font-semibold">Statistics</h2>
                 <p className="text-gray-200 w-4/5 mx-auto">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

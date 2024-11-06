@@ -1,6 +1,6 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Helmet } from 'react-helmet-async';
 
 import { useLoaderData, useParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
@@ -31,6 +31,10 @@ const GadgetDetail = () => {
      
     return (
         <div>
+            <Helmet>
+              <title>{product_title} | Gadget Heaven</title>
+            </Helmet>
+
             <div className="bg-purple-600 p-10 pb-44 text-white text-center">
                 <h2 className="text-2xl font-semibold">Product Details</h2>
                 <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

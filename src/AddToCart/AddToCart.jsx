@@ -1,9 +1,10 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { CiFilter } from "react-icons/ci";
 import { getStoredAddList } from "../Utility/AddToDashBoard";
 import { useEffect, useState } from "react";
 import AddToCartList from "./AddToCartList";
 import  modalImage from '../assets/Group.png'
+import { Helmet } from "react-helmet-async";
 
 const AddToCart = () => {
     const [price, ttlPrice] = useState(0);
@@ -56,6 +57,9 @@ const AddToCart = () => {
      
     return (
         <div className="flex flex-col max-w-4xl mx-auto p-4">
+            <Helmet>
+                <title>cart | Gadget Heaven</title>
+            </Helmet>
             <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold">Cart</h2>
                 <div className="flex justify-center items-center gap-4">

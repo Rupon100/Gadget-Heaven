@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
- 
+import { HelmetProvider } from 'react-helmet-async';
 
 import {
   createBrowserRouter,
@@ -13,8 +13,6 @@ import Home from './Home/Home';
 import Category from './Category/Category';
 import Dashboard from './Dashboard/Dashboard';
 import Statistics from './Statistics/Statistics';
-import Gadget from './Gadgets/Gadget';
-import Gadgets from './Gadgets/Gadgets';
 import GadgetDetail from './Gadgets/GadgetDetail';
 import AddToCart from './AddToCart/AddToCart';
 import Wishlist from './AddToCart/Wishlist';
@@ -75,6 +73,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+       <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>,
 )

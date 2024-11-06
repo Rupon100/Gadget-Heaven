@@ -1,13 +1,16 @@
-import { NavLink, Outlet, useLoaderData } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
+import { Helmet } from 'react-helmet-async'; 
 
 const Dashboard = () => {
-
-    //const allGadgets = useLoaderData();
-    // console.log(allGadgets);
+ 
 
     return (
         <div>
+            <Helmet>
+              <title>Dashboard | Gadget Heaven</title>
+            </Helmet>
+            
             <div className="bg-purple-600 p-10 text-white text-center space-y-6">
                 <h2 className="text-4xl font-semibold">Dashboard</h2>
                 <p>Explore the latest gadgets that will take your experience to the next level. <br /> From smart devices to the coolest accessories, we have it all!</p>
