@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { getStoredAddList, getStoredForWishList } from "../Utility/AddToDashBoard";
 import { useEffect, useState } from "react";
 
@@ -10,6 +10,13 @@ const Navbar = () => {
      const [addlist, setAddList] = useState([]);
      const savedItem = getStoredAddList();
      const saveForWish = getStoredForWishList();
+
+
+
+     const location = useLocation();
+     const isHome = location.pathname === '/';
+
+
 
     const links = <div className="flex flex-row gap-2">
         <li>
@@ -46,8 +53,8 @@ const Navbar = () => {
 
     useEffect(() => {
       updateAddList();
-   }, [gadgets, savedItem]);
-
+   }, []);
+  //gadgets, savedItem]
     
 
     useEffect(() => {
@@ -64,7 +71,8 @@ const Navbar = () => {
       
     
     return (
-        <div className="max-w-7xl mx-auto navbar bg-base-100 m-4">
+        <div className="mx-4">
+          <div className={`max-w-7xl mx-auto navbar bg-base-100 m-4 ${isHome ? 'bg-purple-600 text-white rounded-t-md -mb-4' : ''}`}>
             <div className="navbar-start">
               <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -144,7 +152,8 @@ const Navbar = () => {
                  </div>
               </div>
             </div>
-      </div>
+          </div>
+        </div>
     );
 };
 

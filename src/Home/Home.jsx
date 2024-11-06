@@ -1,15 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import Gadgets from "../Gadgets/Gadgets";
 import GadgetsContainer from "../Gadgets/GadgetsContainer";
-
  
 
 const Home = () => {
+    const location = useLocation();
+    const isHome = location.pathname === '/';
+
+
     return (
-       <div className="m-4">
-            <div className="max-w-7xl mx-auto bg-purple-600 p-16 text-white text-center space-y-4 rounded-md pb-44">
+       <div className="mx-4">
+         
+            <div className={`max-w-7xl mx-auto bg-purple-600 p-16 text-white text-center space-y-4 rounded-md pb-44 ${isHome ? 'rounded-t-none' : ''}`}>
                 <div className="m-4 space-y-4">
                   <h1 className="text-4xl font-bold">Upgrade Your Tech Accessorize with Gadget Heaven Accessories</h1>
                   <p className="text-gray-100">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
